@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "g++ ${file} -o ${workspaceRoot}/outputs/${fileBasename}.out -lglut -lGLU -lGL",
+            "group": "build"
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "export DISPLAY=localhost:0 && ${workspaceRoot}/outputs/${fileBasename}.out",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "Build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build for Debug",
+            "type": "shell",
+            "command": "g++ ${file} -o ${workspaceRoot}/outputs/${fileBasename}.out -g -ggdb -lglut -lGLU -lGL",
+            "group": "build"
+        }
+    ]
+}
