@@ -176,7 +176,7 @@ void mouse(int button, int state, int x, int y)
 void mouseMotion(int x, int y)
 {
         Mx = x - (WIDTH/2);
-        My = y - (WIDTH/2);  
+        My = y - (WIDTH/2);
  
         //end of line with draging
         if(SPEED_PARTICLES && PRESSED_LEFT)
